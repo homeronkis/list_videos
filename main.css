@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body .items_list {
+    display: flex;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+}
+body .items_list .item {
+    position: relative;
+    margin: 20px;
+    background-color: black;
+    width: 480px;
+    height: 270px;
+}
+body .items_list .item .video_title {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    padding: 10px;
+    text-align: center;
+    z-index: 1;
+    width: 90%;
+    background-color: rgba(0, 0, 0, .5);
+    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform:translate(-50%, 0) ;
+}
+body .items_list .item .video_title span {
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+}
+@media (max-width: 400px) {
+    body .items_list .item {
+        margin: 20px 10px;
+    }
+}
+@media (max-width: 330px) {
+    body .items_list .item {
+        margin: 20px 0;
+    }
+}
+body .items_list .item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+body .items_list .item iframe {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+@media (max-width: 560px) {
+    body .items_list .item iframe {
+        width: 100%;
+    }
+}
+body .items_list .item.active .video_title {
+    opacity: 0;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+body .items_list .item.active .video_image {
+    width: 0;
+    margin: 0 auto;
+    opacity: 0;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+body .items_list .item.active.show-video iframe {
+    display: block;
+}
